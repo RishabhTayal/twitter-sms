@@ -6,6 +6,7 @@ end
 use Rack::TwilioWebhookAuthentication, ENV["TWILIO_AUTH_TOKEN"], "/messages"
 
 post "/messages" do
+  puts params
   twitter.update(params["Body"]) if params["From"] == ENV["MY_PHONE_NUMBER"]
   content_type "text/xml"
   "<Response/>"
