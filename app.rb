@@ -8,7 +8,10 @@ end
 post "/messages" do
   puts "webhook called" 
   p params
-  p request.body.read["message_data"]["bodies"][0]["content"]
+  p request.body.read
+  @body = request.body.read[:message_data]
+  p @body
+  # p request.body.read[:message_data]["bodies"][0]["content"]
   # twitter.update(params["Body"]) #if params["From"] == ENV["MY_PHONE_NUMBER"]
   # content_type "text/xml"
   # "<Response/>"
