@@ -3,7 +3,7 @@ configure :development do
   Envyable.load("config/env.yml", "development")
 end
 
-use Rack::TwilioWebhookAuthentication, ENV["TWILIO_AUTH_TOKEN"], "/messages"
+# use Rack::TwilioWebhookAuthentication, ENV["TWILIO_AUTH_TOKEN"], "/messages"
 
 post "/messages" do
   puts "webhook called"
