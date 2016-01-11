@@ -7,7 +7,6 @@ gem "rack"
 gem "twitter"
 gem "tweetstream"
 gem "thin"
-gem "twilio-ruby"
 gem "rake"
 
 group :development do
