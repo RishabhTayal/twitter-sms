@@ -9,6 +9,7 @@ post "/messages" do
   puts "webhook called" 
   p params
   p request.body.read
+  request.body.rewind
   body = JSON.parse(request.body.read || '{"name":"Not Given"}')
   p body
   # p request.body.read[:message_data]["bodies"][0]["content"]
