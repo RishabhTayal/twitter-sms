@@ -8,9 +8,9 @@ end
 post "/messages" do
   puts "webhook called" 
   puts params
-  twitter.update(params["Body"]) #if params["From"] == ENV["MY_PHONE_NUMBER"]
-  content_type "text/xml"
-  "<Response/>"
+  # twitter.update(params["Body"]) #if params["From"] == ENV["MY_PHONE_NUMBER"]
+  # content_type "text/xml"
+  # "<Response/>"
 end
 
 get "/health" do
