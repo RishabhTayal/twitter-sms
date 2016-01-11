@@ -12,11 +12,11 @@ post "/messages" do
   request.body.rewind
   body = JSON.parse(request.body.read || '{"name":"Not Given"}')
   p body
-  p body['message_data']['bodies'][0]['content']
-  # p request.body.read[:message_data]["bodies"][0]["content"]
+  content = body['message_data']['bodies'][0]['content']
+  twitter.update(content)
   # twitter.update(params["Body"]) #if params["From"] == ENV["MY_PHONE_NUMBER"]
-  # content_type "text/xml"
-  # "<Response/>"
+  content_type "text/xml"
+  "<Response/>"
 end
 
 get "/health" do
