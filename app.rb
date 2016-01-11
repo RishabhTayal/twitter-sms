@@ -9,7 +9,7 @@ post "/messages" do
   puts "webhook called" 
   p params
   p request.body.read
-  @body = JSON.parse(request.body)
+  @body = JSON.parse(request.body.read)
   p @body
   # p request.body.read[:message_data]["bodies"][0]["content"]
   # twitter.update(params["Body"]) #if params["From"] == ENV["MY_PHONE_NUMBER"]
